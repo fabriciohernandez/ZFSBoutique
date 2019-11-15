@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet')
+  script(src='https://kit.fontawesome.com/a81368914c.js')
+  style
+    include resources/loginResources/login.css
+    
+  title Login
+.background
+.container
+  .img
+    img(src='/imgs/login.svg')
+  .login-container
+    form(action='#' method='post')
+      img.avatar(src= '/imgs/people.svg')
+      h2 Iniciar Sesion
+      h5 ZFS BOUTIQUE
+      .input-div.one
+        .i
+          i.fas.fa-user
+        div
+          h5 Usuario
+          input.input(type='text')
+      .input-div.two
+        .i
+          i.fas.fa-lock
+        div
+          h5 Contrase&ntilde;a
+          input.input(type='password')
+      .links
+        a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
+        a#registrarse(href='#') Registrarse
+      input.btn(type='submit' value='Iniciar')
+.containerRegistro
+  .img
+    img(src='/imgs/register.svg')
+  .login-container
+    form(action='index.html' method='post')
+      img.avatar(src='/imgs/people.svg')
+      h2 Crear Cuenta
+      h5 ZFS BOUTIQUE
+      .input-div.one
+        .i
+          i.fas.fa-user
+        div
+          h5 Usuario
+          input.input(type='text')
+      .input-div.two
+        .i
+          i.fas.fa-lock
+        div
+          h5 Contrase&ntilde;a
+          input.input(type='password')
+      .input-div.two
+        .i
+          i.fas.fa-key
+        div
+          h5 Repetir Contrase&ntilde;a
+          input.input(type='password')
+      .input-div.two
+        .i
+          i.fas.fa-envelope
+        div
+          h5 Correo Electr&oacute;nico
+          input.input(type='text')
+      .links
+        a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
+        a#iniciarSesion(href='#') Iniciar Sesi&oacute;n
+      input.btn(type='submit' value='Registrarse')
+script 
+  include resources/loginResources/main.js

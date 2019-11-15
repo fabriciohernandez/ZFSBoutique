@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 
 
 var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
 var usuarioRouter = require('./routes/usuario');
 var productoRouter = require('./routes/producto');
@@ -21,8 +22,11 @@ mongoose.connect('mongodb://localhost:27017/TiendaRopa')
 
 mongoose.Promise =  global.Promise;
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 //starting the server
-app.set('port' ,process.env.PORT || 3000);
+app.set('port' ,process.env.PORT || 3001);
 
 app.listen(app.get('port'), ()=>{
   console.log(`server on port ${app.set('port')}`);
@@ -37,6 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/login',loginRouter);
 app.use('/users', usersRouter);
 app.use('/usuario',usuarioRouter);
 app.use('/producto',productoRouter);
