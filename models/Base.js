@@ -13,8 +13,7 @@ const UsuarioSchema = new Schema({
     Correo:Array,
     N_tarjeta:String,
     Visualiza:{
-        Producto: { type: Schema.ObjectId, ref: "Producto" },
-       
+        Producto: { type: Schema.ObjectId, ref: "Producto" }
     },
     Carro:{
         Producto: { type: Schema.ObjectId, ref: "Producto" },
@@ -32,10 +31,16 @@ const ProductoSchema = new Schema({
     mas_18: String,
     Precio: NumberDecimal(),
     Marca:String,
-    imagen:{
-        title:{type:String, required:true},
-
+    Imagen:{
+        imagen: { type: Schema.ObjectId, ref: "Imagen" }
     }
+    
+});
+
+const ImagenSchema = new Schema({
+    titulo:String,
+    imageUrl: String,
+    public_id: String,
 
 });
 
@@ -43,5 +48,8 @@ const ProductoSchema = new Schema({
 
 
 
+
+
 exports.Usuario = mongoose.model("Usuario", UsuarioSchema);
 exports.Producto = mongoose.model("Producto", ProductoSchema);
+exports.Imagen = mongoose.model("Imagen", ImagenSchema);
