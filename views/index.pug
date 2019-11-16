@@ -1,0 +1,69 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet')
+  style
+    include resources/indexResources/style.css
+  title Home
+section.main-container
+  .nav-container
+    header.header
+      a(href='#')
+        img.logo(src='/imgs/home/Logo.png')
+      nav
+        ul.options
+          li
+            a#l1(href='#') ALL ITEMS
+  section.menu
+    .mid-container
+      article#women1
+        img.women(src='/imgs/home//women.png')
+        a(href='#')
+      article#men2
+        img.men(src='/imgs/home//men.png')
+        a(href='#')
+      article#shoes3
+        img.shoes(src='/imgs/home//shoes.png')
+        a(href='#')
+      article#age18only
+        img.age18(src='/imgs/home//mas18.png')
+        a(href='#')
+    .mobile-container
+      article#women1
+        img.women(src='/imgs/home/mobile/women.png')
+        a(href='#')
+      article#men2
+        img.men(src='/imgs/home/mobile/men.png')
+        a(href='#')
+      article#shoes3
+        img.shoes(src='/imgs/home/mobile/shoes.png')
+        a(href='#')
+      article#age18only
+        img.age18(src='/imgs/home/mobile/age18.png')
+        a(href='#')
+  section.info
+    .bottom-container
+      h2 Informaci&oacute;n
+      .disclaimer
+        img(src='/imgs/home/Logo.png')
+        p
+          | ZFS BOUTIQUE es una plataforma de compra con las &uacute;ltimas tendecias
+          | de moda.
+      .contact
+        form.contact-form(action='')
+          .input-contact.name
+            h5 Nombre
+            input#name.input(type='text' name='name' placeholder='')
+          .input-contact.subject
+            h5 Asunto
+            input#subject.input(type='text' name='subject' placeholder='')
+          textarea#message(name='' cols='30' rows='10' placeholder='Mensaje')
+          input.btn(type='submit' value='Contactar')
+footer
+  p Copyright 2019 ZFS Boutique. All Rights Reserved
+script(type='text/javascript' src='/js/main.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
