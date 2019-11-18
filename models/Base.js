@@ -12,9 +12,6 @@ const UsuarioSchema = new Schema({
     Telefono: Array,
     Correo:Array,
     N_tarjeta:String,
-    Visualiza:{
-        Producto: { type: Schema.ObjectId, ref: "Producto" }
-    },
     Carro:{
         Producto: { type: Schema.ObjectId, ref: "Producto" },
         total: NumberDecimal()
@@ -24,11 +21,8 @@ const UsuarioSchema = new Schema({
 
 const ProductoSchema = new Schema({
     Codigo: {type: String, unique: true},
-    Pantalon: String,
-    Camisa: String,
-    Zapatos:String,
-    Status:String,
-    mas_18: String,
+    tipo:String,
+    Status:Boolean,
     Precio: NumberDecimal(),
     Marca:String,
     Imagen:{
