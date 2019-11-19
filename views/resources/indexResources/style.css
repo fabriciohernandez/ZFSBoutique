@@ -1,5 +1,3 @@
-
-
 @media only screen and (min-width: 414px){
     
     .mid-container{
@@ -33,10 +31,11 @@
         height: 100%;
     }
 
-    
+    .login{
+        display: none;
+    }
 
-
-    
+ 
 }
 
 body {
@@ -213,6 +212,10 @@ p{
     background-position: right;
   }
 
+.disclaimer img{
+    width:100%;
+}
+
 
 
 
@@ -220,6 +223,37 @@ p{
 @media only screen and (min-width: 1024px){
     .mobile-container{
         display: none;
+    }
+
+    .login{
+        display:block;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #l2{
+        display:none;
+    }
+
+    button{
+        display: block;
+        height: 3em;
+        border-radius: 25px;
+        margin: 0 2em;
+        padding: 1em;
+        outline: none;
+        border: none;
+        background-image: linear-gradient(to right, #FF6347,#FF6347,#D0CDE1);
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: 'Poppins' sans-serif;
+        background-size: 200%;
+        transition: .5s;
+    }
+    
+    button:hover{
+        background-position: right;
     }
 
     .mid-container{
@@ -257,10 +291,6 @@ p{
         grid-row: span 1;
         grid-column: span 2;
     }
-    
-    
+      
 
 }
-
-
-
