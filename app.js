@@ -29,6 +29,10 @@ useNewUrlParser: true})
 
 mongoose.Promise =  global.Promise;
 
+//Define views engine
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 //starting the server
 app.set('port' ,process.env.PORT || 3000);
 
