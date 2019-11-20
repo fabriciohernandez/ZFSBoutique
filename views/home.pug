@@ -21,21 +21,33 @@ section.main-container
           li
             a#l1(href='/all') ALL ITEMS
           li
-            a#l2(href='#') LOGIN
+            a#l2(href='/login') LOGIN
   section.menu
     .mid-container
       article#women1
         a(href='/women')
-          img.women(src='imgs/home/women.png')
+          img.img-font(src='imgs/home/women.png')
+        .box
+          .text 
+            a(href='/women') SHOP WOMEN
       article#men2
         a(href='/men')
-          img.men(src='imgs/home/men.png')
+          img.img-font(src='imgs/home/men.png')
+        .box
+          .text 
+            a(href='/men') SHOP MEN
       article#shoes3
         a(href='/shoes')
-          img.shoes(src='imgs/home/shoes.png')
+          img.img-font(src='imgs/home/shoes.png')
+        .box
+          .text 
+            a(href='/shoes') SHOP SHOES
       article#age18only
         a(href='/age18')
-          img.age18(src='imgs/home/mas18.png')
+          img.img-font(src='imgs/home/mas18.png')
+        .box
+          .text 
+            a(href='/age18') SHOP +18
     .mobile-container
       article#women1
         a(href='/women')
@@ -47,7 +59,7 @@ section.main-container
         a(href='/shoes')
           img.shoes(src='imgs/home/mobile/shoes.png')
       article#age18only
-        a(href='/age18')
+        a(href='age18')
           img.age18(src='imgs/home/mobile/age18.png')
   section.info
     .bottom-container

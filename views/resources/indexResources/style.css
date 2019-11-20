@@ -278,6 +278,47 @@ p{
         height: 100%;
     }
     
+    .img-font{
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    article:hover .img-font{
+        transform: scale(1.5);
+        opacity: 0.3;
+      }
+
+    .box{
+        position: relative;
+        left: 50%;
+        bottom:50%;
+        transition: .5s ease;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    article:hover .box{
+        opacity: 1;
+    }
+
+    .text {
+        background-color: #FF6347;
+        color: white;
+        font-size: 1.5em;
+        padding: 1em 1.5em;
+    }
+
+    .text a{
+        text-decoration: none;
+        color: white;
+    }
+    
     .bottom-container{
         display:grid;
         grid-template-columns: 1fr 1fr;
@@ -285,6 +326,7 @@ p{
         grid-auto-flow: dense;
         column-gap: 5em;
     }
+
     
     .bottom-container h2{
         color: black;
