@@ -1,13 +1,21 @@
 var mongoose = require('mongoose');
-var Usuario = Usuario;
+const User = require("../models/User")
 
 //triggers??????
 
 
 //INSERT
 const insert = (req, res)=>{
+<<<<<<< Updated upstream
     
     let usuario = new Usuario(
+=======
+    let body=req.body;
+    console.log(body);
+
+
+    let usuario = new User(
+>>>>>>> Stashed changes
         req.body
     );
 
@@ -74,7 +82,7 @@ const deleteById = (req, res)=>{
 
 //GET ALL 
 const getAll = (req, res)=>{
-    Usuario.find((err, usuarios)=>{
+    User.find((err, usuarios)=>{
         if(err) return res.status(500).json({
             message: "Something happend trying to get the users",
         });

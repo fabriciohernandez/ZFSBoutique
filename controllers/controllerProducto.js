@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-var Producto = Producto;
-
+const Producto = require("../models/Producto")
 
 //triggers??????
 

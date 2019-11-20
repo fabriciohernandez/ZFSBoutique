@@ -38,7 +38,11 @@ head
   .img
     img(src='/imgs/register.svg')
   .login-container
+<<<<<<< Updated upstream
     form(action='index.html' method='post')
+=======
+    form(action='usuario/add' method='POST')
+>>>>>>> Stashed changes
       img.avatar(src='/imgs/people.svg')
       h2 Crear Cuenta
       h5 ZFS BOUTIQUE
@@ -47,13 +51,21 @@ head
           i.fas.fa-user
         div
           h5 Usuario
+<<<<<<< Updated upstream
           input.input(type='text')
+=======
+          input.input(type='text' name='User_name')
+>>>>>>> Stashed changes
       .input-div.two
         .i
           i.fas.fa-lock
         div
           h5 Contrase&ntilde;a
+<<<<<<< Updated upstream
           input.input(type='password')
+=======
+          input.input(type='password' name='Password')
+>>>>>>> Stashed changes
       .input-div.two
         .i
           i.fas.fa-key
@@ -63,9 +75,17 @@ head
       .input-div.two
         .i
           i.fas.fa-envelope
+        div 
+          h5 Correo Electronico;
+          input.input(type='text' name='Correo')
+      .input-div.two
         div
+<<<<<<< Updated upstream
           h5 Correo Electr&oacute;nico
           input.input(type='text')
+=======
+          
+>>>>>>> Stashed changes
       .links
         a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
         a#iniciarSesion(href='#') Iniciar Sesi&oacute;n
