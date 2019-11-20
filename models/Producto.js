@@ -1,4 +1,5 @@
 const Mongoose= require ("mongoose");
+const Imagen = require("../models/Imagenes")
 
 const ProductoSchema = new Mongoose.Schema({
     Codigo: {type: String, unique: true},
@@ -7,7 +8,7 @@ const ProductoSchema = new Mongoose.Schema({
     Precio: String,
     Marca:String,
     Imagen:{
-        imagen: { type: Mongoose.Schema.ObjectId, ref: "Imagen" }
+        imagen: { type: Mongoose.Schema.ObjectId, ref: Imagen }
     }
     
 });

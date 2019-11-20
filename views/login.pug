@@ -8,7 +8,7 @@ head
   style
     include resources/loginResources/login.css
     
-  title Login
+  title #{title}
 .background
 .container
   .img
@@ -16,6 +16,7 @@ head
   .login-container
     form(action='usuario/iniciar' method='get')
       img.avatar(src= '/imgs/people.svg')
+      h4 #{message}
       h2 Iniciar Sesion
       h5 ZFS BOUTIQUE
       .input-div.one
@@ -38,9 +39,10 @@ head
   .img
     img(src='/imgs/register.svg')
   .login-container
-    form(action='usuario/add' method='POST')
+    form(method='POST')
       img.avatar(src='/imgs/people.svg')
       h2 Crear Cuenta
+      
       h5 ZFS BOUTIQUE
       .input-div.one
         .i

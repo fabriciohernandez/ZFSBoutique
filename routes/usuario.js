@@ -8,9 +8,9 @@ router.get('/', (req,res) =>{
 });
 
 
-router.post('/add', ControllerUsuario.insert);
+router.post('/', ControllerUsuario.insert);
 
-router.get('/Iniciar', ControllerUsuario.getOneById);
+router.get('/login', ControllerUsuario.getOneById);
 
 router.put('/update', ControllerUsuario.update);
 

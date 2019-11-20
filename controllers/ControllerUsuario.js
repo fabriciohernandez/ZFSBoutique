@@ -19,11 +19,8 @@ const insert = (req, res)=>{
             message: "Something happend try again",
         });
 
-        res.status(200).json({
-            message: "Successful",
-            usuario: nUsuario
-
-        });
+        return res.render('login', { message: 'Su usuario ha sido creado con éxito ¡Ahora inicia sesion!' });
+        
     })
 }
 
