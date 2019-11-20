@@ -14,7 +14,7 @@ head
   .img
     img(src='/imgs/login.svg')
   .login-container
-    form(action='#' method='get')
+    form(action='usuario/iniciar' method='get')
       img.avatar(src= '/imgs/people.svg')
       h2 Iniciar Sesion
       h5 ZFS BOUTIQUE
@@ -38,7 +38,7 @@ head
   .img
     img(src='/imgs/register.svg')
   .login-container
-    form(action='/add' method='POST')
+    form(action='usuario/add' method='POST')
       img.avatar(src='/imgs/people.svg')
       h2 Crear Cuenta
       h5 ZFS BOUTIQUE
@@ -47,25 +47,25 @@ head
           i.fas.fa-user
         div
           h5 Usuario
-          input.input(type='text' name='user_name')
+          input.input(type='text' name='User_name')
       .input-div.two
         .i
           i.fas.fa-lock
         div
           h5 Contrase&ntilde;a
-          input.input(type='password' name='password')
+          input.input(type='password' name='Password')
       .input-div.two
         .i
           i.fas.fa-key
         div
           h5 Repetir Contrase&ntilde;a
-          input.input(type='password' name='passwordConfirm')
+          input.input(type='password' name='PasswordConfirm')
       .input-div.two
         .i
           i.fas.fa-envelope
         div
           h5 Correo Electr&oacute;nico
-          input.input(type='text' name='correo')
+          input.input(type='text' name='Correo')
       .links
         a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
         a#iniciarSesion(href='#') Iniciar Sesi&oacute;n

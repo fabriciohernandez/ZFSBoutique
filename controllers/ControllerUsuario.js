@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Usuario = Usuario;
+const Usuario = require("../models/Usuario")
 
 //triggers??????
 
@@ -103,7 +103,7 @@ const getOneById = (req, res)=>{
         });
 
         if(usuario){
-            res.status(200).json(usuario);
+            res.location('/' + inst._id)
         }else{
             res.status(404).json({
                 message: `There is no one with username ${id}`,
