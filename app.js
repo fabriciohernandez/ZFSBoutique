@@ -12,8 +12,8 @@ require('dotenv').config();
 
 
 
-var usuarioRouter = require('./routes/usuario');
-var productoRouter = require('./routes/producto');
+//var usuarioRouter = require('./routes/usuario');
+//var productoRouter = require('./routes/producto');
 var imagenesRouter = require('./routes/imagenes');
 
 
@@ -30,12 +30,15 @@ useNewUrlParser: true})
 
 mongoose.Promise =  global.Promise;
 
+
+
 //Define views engine
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+
 //starting the server
-app.set('port' ,process.env.PORT || 3000);
+app.set('port' ,process.env.PORT || 3050);
 
 app.listen(app.get('port'), ()=>{
   console.log(`server on port ${app.set('port')}`);
@@ -63,8 +66,8 @@ const storage = multer.diskStorage({
 app.use(multer({storage}).single('image'));
 
 
-app.use('/usuario',usuarioRouter);
-app.use('/producto',productoRouter);
+//app.use('/usuario',usuarioRouter);
+//app.use('/producto',productoRouter);
 app.use('/imagenes', imagenesRouter);
 
 
