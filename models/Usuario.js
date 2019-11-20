@@ -4,13 +4,13 @@ const UsuarioSchema = Mongoose.Schema({
     User_name:{type: String, required: true, unique: true},
     Apellido: String,
     Nombre: String,
-    Password:String,
-    Rol:String,
-    Pais:String,
-    Direccion:String,
+    Password: String,
+    Rol: String,
+    Pais: String,
+    Direccion: String,
     Telefono: String,
     Correo: {type: String, required: true},
-    N_tarjeta:Array,
+    N_tarjeta: Array,
     Carro:{
         Producto: { type: Mongoose.Schema.ObjectId, ref: "Producto" },
         total: String

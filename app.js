@@ -5,6 +5,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var multer =require('multer');
 
+
 if (process.env.NODE_ENV !== 'production'){
 require('dotenv').config();
 }
@@ -48,6 +49,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 
 const storage = multer.diskStorage({
