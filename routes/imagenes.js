@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Imagen = require('../models/Base')
+var Imagen = require('../models/Imagenes')
 var cloudinary = require('cloudinary');
 
 cloudinary.config({
