@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='css/style.css')
+  link(href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet')
+  script(src='https://kit.fontawesome.com/f0e7b31299.js' crossorigin='anonymous')
+  style
+    include resources/shopResources/style.css
+  title All
+section.main-container
+  header.header
+    .account
+      ul
+        li
+          button 
+            a(href='/login') Iniciar Sesi&oacute;n
+      a.hide-mobile
+        i.fas.fa-shopping-bag
+    a(href='/home')
+      img.logo(src='imgs/shop/Logo.png')
+  .account-mobile
+    ul.mobile-menu.list(id='#menu')
+      li
+        a(href='/login') INICIAR SESI&Oacute;N
+      li
+        a SHOPPING CART
+  .nav-container
+    nav
+      ul.menu
+        li
+          a#l1(href='/women') WOMEN
+        li
+          a#l2(href='/men') MEN
+        li
+          a#l3(href='/shoes') SHOES
+        li
+          a#l4(href='/age18') +18
+  .banner
+    img(src='imgs/shop/banner.png')
+  section.clothing
+    .shop-container
+      .filter-bar
+        ul.filter
+          li Pantalones
+          li Camisas
+          li Zapatos
+      .show-clothes
+        ul
+          li
+            img.item(src='imgs/shop/clothing/Men/jacket01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/pants01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/pants02.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/pants03.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/pants04.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/pants05.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/sweater01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Men/sweater02.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Women/pants01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Women/shirt01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Women/sweater01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Women/sweater02.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Shoes/shoes01.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Shoes/shoes02.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Shoes/shoes03.jpg')
+          li
+            img.item(src='imgs/shop/clothing/Shoes/shoes04.jpg')
+  section.info
+    .bottom-container
+      .info-text
+        img(src='/imgs/shop/info.svg')
+        p
+          | &iquest;Necesitas ayuda o informaci&oacute;n?
+      .options
+        ul
+          li
+            a(href='#') Ayuda
+          li
+            a(href='#') Informaci&oacute;n
+footer.footer
+  p Copyright 2019 ZFS Boutique. All Rights Reserved
+script(src='assets/js/main.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
