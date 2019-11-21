@@ -1,12 +1,15 @@
 var mongoose = require('mongoose');
-var Usuario = Usuario;
+const Usuario = require("../models/Usuario")
 
 //triggers??????
 
 
 //INSERT
 const insert = (req, res)=>{
-    
+    let body=req.body;
+    console.log(body);
+
+
     let usuario = new Usuario(
         req.body
     );
@@ -16,11 +19,8 @@ const insert = (req, res)=>{
             message: "Something happend try again",
         });
 
-        res.status(200).json({
-            message: "Successful",
-            usuario: nUsuario
-            
-        });
+        return res.render('login', { message: 'Su usuario ha sido creado con éxito ¡Ahora inicia sesion!' });
+        
     })
 }
 
@@ -28,11 +28,11 @@ const insert = (req, res)=>{
 //UPDATE
 const update = (req, res)=>{
     let usuario = req.body
-   
+
     if(!usuario._id){
         return res.status(400).json({
             message: "Something happend try again",
-        }); 
+        });
     }
 
     Usuario.update({_id: usuario._id}, usuario)
@@ -56,7 +56,7 @@ const deleteById = (req, res)=>{
     if(!usuario._id){
         return res.status(400).json({
             message: "Username needed",
-        }); 
+        });
     }
 
     Usuario.deleteOne({_id:usuario._id})
@@ -72,7 +72,7 @@ const deleteById = (req, res)=>{
         })
 }
 
-//GET ALL 
+//GET ALL
 const getAll = (req, res)=>{
     Usuario.find((err, usuarios)=>{
         if(err) return res.status(500).json({
@@ -92,7 +92,7 @@ const getAll = (req, res)=>{
 
 //GET BY ID
 const getOneById = (req, res)=>{
-    let id = req.params.id; 
+    let id = req.params.id;
 
     Usuario.findById(id, (err, usuario)=>{
         if(err) return res.status(500).json({
@@ -100,13 +100,13 @@ const getOneById = (req, res)=>{
         });
 
         if(usuario){
-            res.status(200).json(usuario);
+            res.location('/' + inst._id)
         }else{
             res.status(404).json({
                 message: `There is no one with username ${id}`,
             });
         }
-    });  
+    });
 }
 
 
