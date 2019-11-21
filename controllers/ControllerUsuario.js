@@ -15,9 +15,7 @@ const insert = (req, res)=>{
     );
 
     usuario.save((err, nUsuario)=>{
-        if(err) return res.status(500).json({
-            message: "Something happend try again",
-        });
+        if(err)return res.render('404', { title: '404' });
 
         return res.render('login', { message: 'Su usuario ha sido creado con éxito ¡Ahora inicia sesion!' });
         
