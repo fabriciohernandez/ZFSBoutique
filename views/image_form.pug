@@ -5,12 +5,11 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
   title ZFS
-  link
-  |  rel=&apos;stylesheet&apos; href=&apos;bootstrap.css&apos;
+
 form(action='/imagenes/add2' enctype='multipart/form-data'  method="POST")
  .form-goup
   input(type='text' name='titulo' placeholder="Title" )
  .input-goup
-  input(type='file' name="image")
+  input(type='file' accept=".jpg,.png,.jpeg" name="image")
   button.btn.btn-primary  upload photho
    
