@@ -1,0 +1,88 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet')
+  style
+    include resources/indexResources/style.css
+  title Home
+section.main-container
+  .nav-container
+    header.header
+      .login
+        ul
+          li
+            button 
+              a(href='/login') Iniciar Sesi&oacute;n
+      a(href='#')
+        img.logo(src='imgs/home/Logo.png')
+      nav
+        ul.options
+          li
+            a#l1(href='/all') ALL ITEMS
+          li
+            a#l2(href='/login') LOGIN
+  section.menu
+    .mid-container
+      article#women1
+        a(href='/women')
+          img.img-font(src='imgs/home/women.png')
+        .box
+          .text 
+            a(href='/women') SHOP WOMEN
+      article#men2
+        a(href='/men')
+          img.img-font(src='imgs/home/men.png')
+        .box
+          .text 
+            a(href='/men') SHOP MEN
+      article#shoes3
+        a(href='/shoes')
+          img.img-font(src='imgs/home/shoes.png')
+        .box
+          .text 
+            a(href='/shoes') SHOP SHOES
+      article#age18only
+        a(href='/age18')
+          img.img-font(src='imgs/home/mas18.png')
+        .box
+          .text 
+            a(href='/age18') SHOP +18
+    .mobile-container
+      article#women1
+        a(href='/women')
+          img.women(src='imgs/home/mobile/women.png')
+      article#men2
+        a(href='/men')
+          img.men(src='imgs/home/mobile/men.png')
+      article#shoes3
+        a(href='/shoes')
+          img.shoes(src='imgs/home/mobile/shoes.png')
+      article#age18only
+        a(href='age18')
+          img.age18(src='imgs/home/mobile/age18.png')
+  section.info
+    .bottom-container
+      h2 Informaci&oacute;n
+      .disclaimer
+        img(src='/imgs/home/Logo.png')
+        p
+          | ZFS BOUTIQUE es una plataforma de compra con las &uacute;ltimas tendecias
+          | de moda.
+      .contact
+        form.contact-form(action='')
+          .input-contact.name
+            h5 Nombre
+            input#name.input(type='text' name='name' placeholder='')
+          .input-contact.subject
+            h5 Asunto
+            input#subject.input(type='text' name='subject' placeholder='')
+          textarea#message(name='' cols='30' rows='10' placeholder='Mensaje')
+          input.btn(type='submit' value='Contactar')
+footer
+  p Copyright 2019 ZFS Boutique. All Rights Reserved
+script(type='text/javascript' src='/js/main.js')
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
