@@ -10,7 +10,7 @@ const UsuarioSchema = Mongoose.Schema({
     Pais: String,
     Direccion: String,
     Telefono: String,
-    Correo: {type: String, required: true},
+    Correo: Array,
     N_tarjeta: Array,
     Carro:{
         Producto: { type: Mongoose.Schema.ObjectId, ref: "Producto" },
