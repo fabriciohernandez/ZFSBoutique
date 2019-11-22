@@ -58,7 +58,7 @@ router.post('/add2', async (req, res) => {
    var saveImageDb = (error, result) => {
       if (error) {
          console.log(error);
-         return res.status(500).send("Eroror");
+         return res.status(500).send("Error");
    }
       var newImagen = new Imagen({
          titulo: titulo,
@@ -71,7 +71,7 @@ router.post('/add2', async (req, res) => {
             fs.unlink(req.file.path);
             res.send("Recived")
          }).catch(err => {
-            res.status(500).send("Eroror");
+            res.status(500).send("Error");
          })
    }
    cloudinary.v2.uploader.upload(req.file.path, saveImageDb);

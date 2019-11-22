@@ -1,20 +1,51 @@
 var express = require('express');
 var router = express.Router();
-const ControllerProducto = require("../controllers/controllerProducto");
+var Producto = require("../models/Producto")
+//var ControllerProducto = require("../controllers/ControllerProducto");
+
 
 router.get('/', (req,res) =>{
     res.render('producto', { title: 'product' });
   });
   
 
-router.get('/', ControllerProducto.getAll);
-router.get('/:id', ControllerProducto.getOneById);
+//router.get('/all', ControllerProducto.getAll);
+//router.get('/:id', ControllerProducto.getOneById);
 
-router.post('/', ControllerProducto.insert);
+router.post('/add2', async (req, res) => {
 
-router.put('/update', ControllerProducto.update);
+  console.log(req.body);
+  
+  var {
+    codigo,
+    tipo,
+    status,
+    size,
+    precio,
+    marca
+  } = req.body;
 
-router.delete('/delete', ControllerProducto.deleteById);
+     var newProducto = new Producto({
+      Codigo: codigo,
+      tipo:tipo,
+      Status:status,
+      Size:size,
+      Precio: precio,
+      Marca:marca,
+     });
+
+     newProducto.save()
+        .then(product => {
+           res.send("Recived")
+        }).catch(err => {
+           res.status(500).send("Error");
+        })
+  
+  
+
+});
+//router.put('/update', ControllerProducto.update);
+//router.delete('/delete', ControllerProducto.deleteById);
 
 
 
