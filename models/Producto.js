@@ -5,6 +5,7 @@ const ProductoSchema = new Mongoose.Schema({
     Codigo: {type: String, unique: true},
     tipo:String,
     Status:Boolean,
+    Size:String,
     Precio: String,
     Marca:String,
     Imagen:{
