@@ -5,6 +5,7 @@ const UsuarioSchema = Mongoose.Schema({
     Apellido: String,
     Nombre: String,
     Password: String,
+    eded:String,
     Rol: String,
     Pais: String,
     Direccion: String,
