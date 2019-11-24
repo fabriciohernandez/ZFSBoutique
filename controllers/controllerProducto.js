@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Producto = Producto;
+var Producto = require("../models/Producto")
 
 
 //triggers??????
@@ -7,21 +7,19 @@ var Producto = Producto;
 
 //INSERT
 const insert = (req, res)=>{
-    
-    let producto = new Producto(
+    let body=req.body;
+    console.log(body);
+
+
+    let producto= new Producto(
         req.body
     );
 
-    producto.save((err, nProducto)=>{
-        if(err) return res.status(500).json({
-            message: "Something happend try again",
-        });
+    producto.save('/add2', (err, nProducto)=>{
+        if(err)return res.render('404', { title: '404' });
 
-        res.status(200).json({
-            message: "Successful",
-            producto: nProducto
-            
-        });
+        return res.render({ message: 'producto añadido!' });
+        
     })
 }
 

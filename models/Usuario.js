@@ -11,6 +11,7 @@ const UsuarioSchema = Mongoose.Schema({
     },
     Apellido: String,
     Nombre: String,
+
     Password: {
         type: String,
         required: true,
@@ -22,6 +23,9 @@ const UsuarioSchema = Mongoose.Schema({
             required: true
         }
     }],
+    Password: String,
+    eded:String,
+
     Rol: String,
     Pais: String,
     Direccion: String,
@@ -36,6 +40,7 @@ const UsuarioSchema = Mongoose.Schema({
             }
         }
     },
+    Correo: Array,
     N_tarjeta: Array,
     Carro:{
         Producto: { 

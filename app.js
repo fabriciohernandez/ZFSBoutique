@@ -16,6 +16,12 @@ var usuarioRouter = require('./routes/usuario');
 var productoRouter = require('./routes/producto');
 var imagenesRouter = require('./routes/imagenes');
 var notFoundRouter = require('./routes/404');
+var indexRouter = require('./routes/home');
+var allRouter = require('./routes/all');
+var womenRouter = require('./routes/women');
+var menRouter = require('./routes/men');
+var shoesRouter = require('./routes/shoes');
+var ageRestrictedRouter = require('./routes/age18');
 
 var app = express();
 
@@ -60,6 +66,12 @@ app.use('/usuario',usuarioRouter);
 app.use('/producto',productoRouter);
 app.use('/imagenes', imagenesRouter);
 app.use('/404', notFoundRouter);
+app.use('/home', indexRouter);
+app.use('/all', allRouter);
+app.use('/women', womenRouter);
+app.use('/men', menRouter);
+app.use('/shoes', shoesRouter);
+app.use('/age18', ageRestrictedRouter);
 
 app.use(function(req, res, next){
   res.status(404);
