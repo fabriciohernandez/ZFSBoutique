@@ -1,0 +1,38 @@
+
+/*======================
+    bienvenido page
+=======================*/
+body{
+  background:white
+}
+
+.page_404{padding:40px 0; background:white; font-family: 'Poppins', sans-serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+ 
+ background-image: url(https://i.pinimg.com/originals/94/54/00/9454001dd02208f352f3729355072dc6.gif);
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+ font-size:60px;
+ }
+ 
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+			 
+			 .link_404{			 
+  color: #fff!important;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background: red;
+    margin: 20px 5px;
+    display: inline-block;}
+  .contant_box_404{ margin-top:-50px;}

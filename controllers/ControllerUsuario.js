@@ -1,28 +1,44 @@
-var mongoose = require('mongoose');
+var Mongoose = require('mongoose');
 const Usuario = require("../models/Usuario")
-
+var express = require('express');
 //triggers??????
 
 
 //INSERT
-const insert = (req, res)=>{
-    let body=req.body;
-    console.log(body);
-
-
-    let usuario = new Usuario(
-        req.body
-    );
-
-    usuario.save((err, nUsuario)=>{
-        if(err)return res.render('404', { title: '404' });
-
-        return res.render('login', { message: 'Su usuario ha sido creado con éxito ¡Ahora inicia sesion!' });
-        
-    })
+const insert = async (req, res)=>{
+    try {
+        const usuario = new Usuario(req.body);
+        await usuario.save()
+        const token = await usuario.generateAuthToken()
+        res.render('login', { title: 'login' ,message:'¡Bienvenido! Ahora inicia sesión para empezar a comprar.'});
+        //res.status(201).send({usuario,token})
+    } catch (error) {
+        res.status(400).send(error)
+    }
 }
 
-
+const login = async(req, res)=>{
+    try {
+        const { Correo, Password } = req.body
+        const user = await Usuario.findByCredentials(Correo,Password)
+        
+        if (!user) {
+            return res.redirect('/usuario');
+        }
+        const token = await user.generateAuthToken()
+        
+        res.setHeader('Authorization','Bearer '+ token); 
+        //return res.redirect(301,'/usuario/yo');
+        res.render('bienvenido', { message: '¡Hola! ' + user.User_name });
+        //res.send({user,token})
+        //res.render('bienvenido',{ message: user.User_name });
+    } catch (error) {
+        console.log(error)
+        res.redirect(301,'/usuario');
+        
+        //res.render('login', { title: 'login' , message: 'Error, Reredivisa el usuario y la contraseña ingresada'});
+    }
+}
 //UPDATE
 const update = (req, res)=>{
     let usuario = req.body
@@ -114,6 +130,7 @@ const getOneById = (req, res)=>{
 
 module.exports = {
     insert,
+    login,
     update,
     deleteById,
     getAll,

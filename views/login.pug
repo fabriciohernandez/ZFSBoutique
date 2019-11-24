@@ -14,7 +14,7 @@ head
   .img
     img(src='/imgs/login.svg')
   .login-container
-    form(action='usuario/iniciar' method='get')
+    form(action='usuario/iniciar' method='post')
       img.avatar(src= '/imgs/people.svg')
       h4 #{message}
       h2 Iniciar Sesion
@@ -23,17 +23,17 @@ head
         .i
           i.fas.fa-user
         div
-          h5 Usuario
-          input.input(type='text')
+          h5 Correo
+          input.input(type='email' name='Correo' required)
       .input-div.two
         .i
           i.fas.fa-lock
         div
           h5 Contrase&ntilde;a
-          input.input(type='password')
+          input.input(type='password' name='Password' required)
       .links
         a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
-        a#registrarse(href='#') Registrarse
+        a#registrarse() Registrarse
       input.btn(type='submit' value='Iniciar')
 .containerRegistro
   .img
@@ -49,25 +49,25 @@ head
           i.fas.fa-user
         div
           h5 Usuario
-          input.input(type='text' name='User_name')
+          input.input(type='text' name='User_name' required)
       .input-div.two
         .i
           i.fas.fa-lock
         div
           h5 Contrase&ntilde;a
-          input.input(type='password' name='Password')
+          input.input(type='password' name='Password' required)
       .input-div.two
         .i
           i.fas.fa-key
         div
           h5 Repetir Contrase&ntilde;a
-          input.input(type='password' name='PasswordConfirm')
+          input.input(type='password' name='PasswordConfirm' required)
       .input-div.two
         .i
           i.fas.fa-envelope
         div
           h5 Correo Electr&oacute;nico
-          input.input(type='text' name='Correo')
+          input.input(type='text' name='Correo' required)
       .links
         a(href='#') &iquest;Olvidaste tu contrase&ntilde;a?
         a#iniciarSesion(href='#') Iniciar Sesi&oacute;n

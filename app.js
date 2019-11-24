@@ -4,8 +4,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var multer =require('multer');
-var passport = require('passport');
-var expressSession = require('express-session');
 
 if (process.env.NODE_ENV !== 'production'){
 require('dotenv').config();
@@ -23,7 +21,7 @@ var app = express();
 
 //connecting DB
 mongoose.connect(process.env.MONGO_URI,{
-useNewUrlParser: true , useUnifiedTopology: true})
+useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true})
 .then(db => console.log('DB conected'))
 .catch(err => console.log(err));
 
@@ -57,9 +55,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressSession({secret: 'zfsboutique'}));
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use('/usuario',usuarioRouter);
 app.use('/producto',productoRouter);
