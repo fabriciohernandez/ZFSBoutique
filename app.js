@@ -4,6 +4,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var multer = require("multer");
+var flash = require("connect-flash");
+var session = require("express-session");
+var passport = require('passport');
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
@@ -21,6 +24,9 @@ var shoesRouter = require("./routes/shoes");
 var ageRestrictedRouter = require("./routes/age18");
 
 var app = express();
+
+//Passport config 
+require('./config/passport')(passport)
 
 //connecting DB
 mongoose
@@ -60,7 +66,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
+//passport middlewares
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+app.use(flash())
+
+//global vars
+app.use((req, res, next) =>{
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+})
 
 //ROUTES
 app.use("/login", loginRouter);

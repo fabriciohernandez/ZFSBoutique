@@ -15,12 +15,15 @@ html(lang='es')
           style(type='text/css').
             .st01{fill:#fff;}
           
-      form.log-in(method = 'post')
+      form.log-in(method = 'post' action='/login/iniciar')
         h4
           | ¡Hola!
 
         p ¡Bienvenido/a 
           strong #{message} por favor iniciar sesion.
+
+        h5 #{error}  
+        h5 #{success_msg}
         .floating-label
           input#email(placeholder='Correo' type='email' name='Correo' required)
           label(for='email') Correo:
