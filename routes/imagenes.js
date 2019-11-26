@@ -29,11 +29,16 @@ router.get("/add", (req, res) => {
 router.post("/add", async (req, res) => {
   console.log(req.body);
   console.log(req.file);
-  var { titulo } = req.body;
+  var { tipo, size, precio, marca, titulo, status } = req.body;
   var result = await cloudinary.v2.uploader.upload(req.file.path);
   console.log(result);
   var newImagen = new Imagen({
+    tipo: tipo,
+    size: size,
+    precio: precio,
+    marca: marca,
     titulo: titulo,
+    status: status,
     imageUrl: result.url,
     public_id: result.public_id
   });
@@ -46,14 +51,19 @@ router.post("/add", async (req, res) => {
 router.post("/add2", async (req, res) => {
   console.log(req.body);
   console.log(req.file);
-  var { titulo } = req.body;
+  var { tipo, size, precio, marca, titulo, status } = req.body;
   var saveImageDb = (error, result) => {
     if (error) {
       console.log(error);
       return res.status(500).send("Error");
     }
     var newImagen = new Imagen({
+      tipo: tipo,
+      size: size,
+      precio: precio,
+      marca: marca,
       titulo: titulo,
+      status: status,
       imageUrl: result.url,
       public_id: result.public_id
     });
