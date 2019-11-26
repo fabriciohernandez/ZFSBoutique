@@ -1,14 +1,213 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600"
+    />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
 
-<head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+      <div class="container">
+        <a class="navbar-brand" href="#">Z.F.S Boutique</a
+        ><button
+          data-toggle="collapse"
+          class="navbar-toggler"
+          data-target="#navcol-1"
+        >
+          <span class="sr-only">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" href="#">Inicio</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" href="#">Contácto</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="dropdown-toggle nav-link"
+                data-toggle="dropdown"
+                aria-expanded="false"
+                href="#"
+                >Categorias</a
+              >
+              <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" role="presentation" href="#">Todo</a
+                ><a class="dropdown-item" role="presentation" href="#">Mujer</a
+                ><a class="dropdown-item" role="presentation" href="#">Hombre</a
+                ><a class="dropdown-item" role="presentation" href="#">+18</a>
+              </div>
+            </li>
+          </ul>
+          <span class="navbar-text actions">
+            <a class="login" href="/login">Iniciar Sesión</a
+            ><a
+              class="btn btn-light action-button"
+              role="button"
+              href="#"
+              style="background-color: rgb(61,62,62);"
+              >Registrarse</a
+            ></span
+          >
+        </div>
+      </div>
+    </nav>
+    <div
+      data-bs-parallax-bg="true"
+      class="homeParllax"
+      style='height: 500px;background-image: url("assets/img/homeParallax.jpg");background-position: center;background-size: cover;filter: blur(0px) contrast(100%);'
+    >
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="2500"
+        data-aos-delay="50"
+        style="color: rgb(255,253,253);"
+      >
+        Z.F.S BOUTIQUE
+      </h1>
+      <h4
+        class="text-white-50"
+        data-aos="fade"
+        data-aos-duration="1650"
+        style="color: rgb(255,255,255);"
+      >
+        <br /><em
+          >la elegancia es dificil de describir pero es muy facil de
+          reconocer.</em
+        ><br /><br />
+      </h4>
+      <a
+        class="btn btn-primary active"
+        role="button"
+        id="btnParallax"
+        href="#shop"
+        >empezar</a
+      >
+    </div>
+    <section class="main-container" id="shop">
+      <section class="menu">
+        <div class="mid-container">
+          <article id="women1">
+            <a href="/women"
+              ><img class="img-font" src="imgs/home/women.png"
+            /></a>
+            <div class="box">
+              <div class="text"><a href="/women">PARA MUJERES</a></div>
+            </div>
+          </article>
+          <article id="men2">
+            <a href="/men"><img class="img-font" src="imgs/home/men.png"/></a>
+            <div class="box">
+              <div class="text"><a href="/men">PARA HOMBRES</a></div>
+            </div>
+          </article>
+          <article id="shoes3">
+            <a href="/shoes"
+              ><img class="img-font" src="imgs/home/shoes.png"
+            /></a>
+            <div class="box">
+              <div class="text"><a href="/shoes">ZAPATOS</a></div>
+            </div>
+          </article>
+          <article id="age18only">
+            <a href="/age18"
+              ><img class="img-font" src="imgs/home/mas18.png"
+            /></a>
+            <div class="box">
+              <div class="text"><a href="/age18">+18</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="mobile-container">
+          <article id="women1">
+            <a href="/women"
+              ><img class="women" src="imgs/home/mobile/women.jpg"
+            /></a>
+          </article>
+          <article id="men2">
+            <a href="/men"><img class="men" src="imgs/home/mobile/men.png"/></a>
+          </article>
+          <article id="shoes3">
+            <a href="/shoes"
+              ><img class="shoes" src="imgs/home/mobile/shoes.png"
+            /></a>
+          </article>
+          <article id="age18only">
+            <a href="age18"
+              ><img class="age18" src="imgs/home/mobile/age18.png"
+            /></a>
+          </article>
+        </div>
+      </section>
+    </section>
 
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
-
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Categorias</h3>
+              <ul>
+                <li><a href="#">Mujer</a></li>
+                <li><a href="#">Hombre</a></li>
+                <li><a href="#">+18</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>ACERCA DE</h3>
+              <ul>
+                <li><a href="#">Compañia</a></li>
+                <li><a href="#">Equipo</a></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <h3>Z.F.S BOUTIQUE</h3>
+              <p>
+                Nos enfocamos en el estilo propio de las personas, ayudandoles a
+                decidir cómo quieren verse.&nbsp;
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="#"><i class="icon ion-social-facebook"></i></a
+              ><a href="#"><i class="icon ion-social-twitter"></i></a
+              ><a href="#"><i class="icon ion-social-youtube"></i></a
+              ><a href="#"><i class="icon ion-social-instagram"></i></a>
+            </div>
+          </div>
+          <p class="copyright">Z.F.S BOUTIQUE © 2019</p>
+        </div>
+      </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+  </body>
 </html>
-

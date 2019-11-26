@@ -1,218 +1,256 @@
-*{
-  padding: 0;
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   margin: 0;
-  box-sizing: border-box;
 }
 
-body{
-  font-family: 'Poppins', sans-serif;
-}
-
-.background{
-  position: fixed;
+html, body {
   height: 100vh;
-  width: 50vw;
-
-  background: #FF6347;
-  z-index: -1;
-  transition: background 250ms ease-in;
-}
-
-.wave{
-  position: fixed;
-  height: 100%;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.container{
   width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50rem;
-  padding: 0 2rem;
-  transition: grid-gap 2s;
-}
-
-.containerRegistro{
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50rem;
-  padding: 0 2rem;
-  transition: grid-gap 2s;
-}
-
-.img{
+  margin: 0 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: #f3f2f2;
 }
 
-.img img{
-  width: 500px;
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  opacity: .85;
 }
 
-.login-container{
+label {
+  font-size: 12.5px;
+  color: #000;
+  opacity: .8;
+  font-weight: 400;
+}
+
+form {
+  padding: 40px 30px;
+  background: #fefefe;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  width: 300px;
+}
+form h4 {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+form h4 span {
+  color: black;
+  font-weight: 700;
+}
+form p {
+  line-height: 155%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #000;
+  opacity: .65;
+  font-weight: 400;
+  max-width: 200px;
+  margin-bottom: 40px;
+}
+
+a.discrete {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0);
+  padding-bottom: 4px;
+  margin-left: auto;
+  font-weight: 300;
+  transition: all .3s ease;
+  margin-top: 40px;
+}
+a.discrete:hover {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  -webkit-appearance: none;
+  width: auto;
+  min-width: 100px;
+  border-radius: 24px;
   text-align: center;
+  padding: 15px 40px;
+  margin-top: 5px;
+  background-color: black;
+  color: #fff;
+  font-size: 14px;
+  margin-left: auto;
+  font-weight: 500;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+  border: none;
+  transition: all .3s ease;
+  outline: 0;
+}
+button:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  box-shadow: 0 2px 6px -1px black;
+}
+button:hover:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
 }
 
-form{
-  width: 360px;
+input {
+  font-size: 16px;
+  padding: 20px 0px;
+  height: 56px;
+  border: none;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  width: 280px;
+  box-sizing: border-box;
+  transition: all .3s linear;
+  color: #000;
+  font-weight: 400;
+  -webkit-appearance: none;
+}
+input:focus {
+  border-bottom: solid 1px black;
+  outline: 0;
+  box-shadow: 0 2px 6px -8px black;
 }
 
-.links{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.avatar{
-  width: 100px;
-}
-
-h5{
-  color: #d9d9d9
-}
-
-form h2{
-  font-size: 2.9rem;
-  text-transform: uppercase;
-  margin: 15px 0;
-  color: #333;
-}
-
-.input-div{
+.floating-label {
   position: relative;
-  display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 25px 0;
-  padding: 5px 0;
-  border-bottom: 2px solid #d9d9d9;
-}
-
-.input-div::after, .input-div::before{
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background-color: #FF6347;
-  transition: .3s;
-}
-
-.input-div::after{
-  right: 50%;
-}
-
-.input-div::before{
-  left: 50%;
-}
-
-.input-div.focus div h5{
-  top: -5px;
-  font-size: 15px;
-}
-
-.input-div.focus .i i{
-  color: #FF6347;
-}
-
-.input-div.focus::after, .input-div.focus::before{
-  width: 50%;
-}
-
-.input-div.one{
-  margin: 0;
-}
-
-.input-div.two{
-  margin-bottom: 4px;
-}
-
-.i{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.i i{
-  color: #d9d9d9;
-  transition: .3s;
-}
-
-.input-div > div{
-  position: relative;
-  height: 45px;
-}
-
-
-.input-div > div h5{
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 18px;
-  transition: .3s;
-}
-
-.input{
-  position: absolute;
+  margin-bottom: 10px;
   width: 100%;
-  height: 100%;
+}
+.floating-label label {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 0;
+  opacity: 0;
+  transition: all .3s ease;
+  padding-left: 44px;
+}
+.floating-label input {
+  width: calc(100% - 44px);
+  margin-left: auto;
+  display: flex;
+}
+.floating-label .icon {
+  position: absolute;
   top: 0;
   left: 0;
-  border: none;
-  outline: none;
-  background: none;
-  padding: 0.5rem 0.7rem;
-  font-size: 1.2rem;
-  font-family: 'Poppins', sans-serif;
-  color: #555;
+  height: 56px;
+  width: 44px;
+  display: flex;
+}
+.floating-label .icon svg {
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  opacity: .15;
+  transition: all .3s ease;
+}
+.floating-label .icon svg path {
+  transition: all .3s ease;
+}
+.floating-label input:not(:placeholder-shown) {
+  padding: 28px 0px 12px 0px;
+}
+.floating-label input:not(:placeholder-shown) + label {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  opacity: .7;
+}
+.floating-label input:valid:not(:placeholder-shown) + label + .icon svg {
+  opacity: 1;
+}
+.floating-label input:valid:not(:placeholder-shown) + label + .icon svg path {
+  fill: black;
+}
+.floating-label input:not(:valid):not(:focus) + label + .icon {
+  -webkit-animation-name: shake-shake;
+          animation-name: shake-shake;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
 }
 
-a{
-  display: block;
-  text-align: right;
-  text-decoration: none;
-  color: #999;
-  font-size: 0.9rem;
-  transition: .3s;
+@-webkit-keyframes shake-shake {
+  0% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  20% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  40% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  60% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  80% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }
 
-a:hover{
-  color: #FF6347;
+@keyframes shake-shake {
+  0% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  20% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  40% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  60% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+  }
+  80% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+.session {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  margin: auto auto;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.12);
 }
 
-.btn{
-  display: block;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  outline: none;
-  border: none;
-  background-image: linear-gradient(to right, #FF6347,#FF6347,#D0CDE1);
-  cursor: pointer;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: 'Poppins' sans-serif;
-  background-size: 200%;
-  transition: .5s;
+.left {
+  width: 220px;
+  height: auto;
+  min-height: 100%;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1554145060-ed5f01755803");
+  background-size: cover;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
-
-.btn:hover{
-  background-position: right;
-}
-
-.hide{
-  display: none;
+.left svg {
+  height: 40px;
+  width: auto;
+  margin: 20px;
 }
