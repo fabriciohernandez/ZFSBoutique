@@ -1,6 +1,7 @@
 var Mongoose = require("mongoose");
 const Usuario = require("../models/Usuario");
-var express = require("express");
+
+
 //triggers??????
 
 //INSERT
@@ -32,15 +33,12 @@ const login = async (req, res) => {
     const user = await Usuario.findByCredentials(Correo, Password);
 
     if (!user) {
+      req.flash('error_msg','Credenciales incorrectas')
       return res.redirect("/login");
     }
+
     const token = await user.generateAuthToken();
 
-    res.setHeader("Authorization", "Bearer " + token);
-    //return res.redirect(301,'/usuario/yo');
-    res.render("all", { message: "¡Hola! " + user.User_name });
-    //res.send({user,token})
-    //res.render('bienvenido',{ message: user.User_name });
   } catch (error) {
     console.log(error);
     res.redirect(301, "/login");

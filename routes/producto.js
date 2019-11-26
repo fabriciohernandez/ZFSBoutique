@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
 var Producto = require("../models/Producto");
+const { ensureAuthenticated} = require('../config/auth')
 //var ControllerProducto = require("../controllers/ControllerProducto");
 
-router.get("/", (req, res) => {
+router.get("/",ensureAuthenticated, (req, res) => {
   res.render("producto", { title: "product" });
 });
 

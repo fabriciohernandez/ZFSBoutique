@@ -27,7 +27,10 @@ const UsuarioSchema = Mongoose.Schema({
   Password: String,
   eded: String,
 
-  Rol: String,
+  Rol: {
+    type: String,
+    default: 1 //Usuario Normal, admin = 0
+  },
   Pais: String,
   Direccion: String,
   Telefono: String,
