@@ -6,16 +6,23 @@ var express = require("express");
 //INSERT
 const insert = async (req, res) => {
   try {
-    const usuario = new Usuario(req.body);
-    await usuario.save();
-    const token = await usuario.generateAuthToken();
-    res.render("login", {
-      title: "login",
-      message: "¡Bienvenido! Ahora inicia sesión para empezar a comprar."
-    });
-    //res.status(201).send({usuario,token})
+    const { User_name, Correo, Password, RPassword } = req.body;
+    let usuario = new Usuario(req.body);
+
+    //verificar las contrasenas
+    if (Password !== RPassword) {
+      res.render("register", { error1: 'Las contrasenas no coinciden.' });
+    } else {
+      await usuario.save();
+      const token = await usuario.generateAuthToken();
+      res.render("login", {
+        title: "login",
+        message: usuario.User_name
+      });
+      //res.status(201).send({usuario,token})
+    }
   } catch (error) {
-    res.status(400).send(error);
+    res.render("register", { error1: "El usuario y el correo estan en uso." });
   }
 };
 
@@ -25,18 +32,18 @@ const login = async (req, res) => {
     const user = await Usuario.findByCredentials(Correo, Password);
 
     if (!user) {
-      return res.redirect("/usuario");
+      return res.redirect("/login");
     }
     const token = await user.generateAuthToken();
 
     res.setHeader("Authorization", "Bearer " + token);
     //return res.redirect(301,'/usuario/yo');
-    res.render("bienvenido", { message: "¡Hola! " + user.User_name });
+    res.render("all", { message: "¡Hola! " + user.User_name });
     //res.send({user,token})
     //res.render('bienvenido',{ message: user.User_name });
   } catch (error) {
     console.log(error);
-    res.redirect(301, "/usuario");
+    res.redirect(301, "/login");
 
     //res.render('login', { title: 'login' , message: 'Error, Reredivisa el usuario y la contraseña ingresada'});
   }
