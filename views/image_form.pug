@@ -7,13 +7,11 @@ head
    script(src='https://kit.fontawesome.com/a81368914c.js')
    style
       include resources/loginResources/login.css
-
-
-
-  form(action='/imagenes/add2' enctype='multipart/form-data'  method="POST")
-   .form-goup
-   input(type='text' name='titulo' placeholder="Title" )
-   .input-goup
-   input(type='file' accept=".jpg,.png,.jpeg" name="image")
-   button.btn.btn-primary  upload photho
+      
+   form(action='/imagenes/add2' enctype='multipart/form-data'  method="POST")
+      .form-goup
+      input(type='text' name='titulo' placeholder="Title" )
+      .input-goup
+      input(type='file' accept=".jpg,.png,.jpeg" name="image")
+      button.btn.btn-primary  upload photho
    
