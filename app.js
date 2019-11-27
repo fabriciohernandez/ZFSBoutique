@@ -23,6 +23,8 @@ var menRouter = require("./routes/men");
 var shoesRouter = require("./routes/shoes");
 var ageRestrictedRouter = require("./routes/age18");
 
+var homeLogedRouter = require("./routes/homeLoged");
+
 var app = express();
 
 //Passport config 
@@ -100,6 +102,9 @@ app.use("/women", womenRouter);
 app.use("/men", menRouter);
 app.use("/shoes", shoesRouter);
 app.use("/age18", ageRestrictedRouter);
+
+//ROUTES LOGED
+app.use("/home", homeLogedRouter);
 
 app.use(function(req, res, next) {
   res.status(404);

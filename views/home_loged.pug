@@ -1,0 +1,116 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+  title Home
+  link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,600')
+  link(rel='stylesheet' href='assets/fonts/ionicons.min.css')
+  link(rel='stylesheet' href='assets/css/Footer-Dark.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css')
+  link(rel='stylesheet' href='assets/css/Navigation-with-Button.css')
+  link(rel='stylesheet' href='assets/css/Simple-Slider.css')
+  link(rel='stylesheet' href='assets/css/styles.css')
+nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
+  .container
+    a.navbar-brand(href='#') Z.F.S Boutique
+    button.navbar-toggler(data-toggle='collapse' data-target='#navcol-1')
+      span.sr-only Toggle navigation
+      span.navbar-toggler-icon
+    #navcol-1.collapse.navbar-collapse
+      ul.nav.navbar-nav.mr-auto
+        li.nav-item(role='presentation')
+          a.nav-link.active(href='#') Inicio
+        li.nav-item(role='presentation')
+          a.nav-link(href='#') Cont&aacute;cto
+        li.nav-item.dropdown
+          a.dropdown-toggle.nav-link(data-toggle='dropdown' aria-expanded='false' href='#') Categorias
+          .dropdown-menu(role='menu')
+            a.dropdown-item(role='presentation' href='#') Todo
+            a.dropdown-item(role='presentation' href='#') Mujer
+            a.dropdown-item(role='presentation' href='#') Hombre
+            a.dropdown-item(role='presentation' href='#') +18
+      span.navbar-text.actions
+        a.login(href='/login/salir') Cerrar Sesion
+        
+.homeParllax(data-bs-parallax-bg='true' style='height: 500px;background-image: url("assets/img/homeParallax.jpg");background-position: center;background-size: cover;filter: blur(0px) contrast(100%);')
+  h1(data-aos='fade-up' data-aos-duration='2500' data-aos-delay='50' style='color: rgb(255,253,253);')
+    | Z.F.S BOUTIQUE
+  h4.text-white-50(data-aos='fade' data-aos-duration='1650' style='color: rgb(255,255,255);')
+    br
+    em
+      | la elegancia es dificil de describir pero es muy facil de
+      | reconocer.
+    br
+    br
+  a#btnParallax.btn.btn-primary.active(role='button' href='#shop') empezar
+section#shop.main-container
+  section.menu
+    .mid-container
+      article#women1
+        a(href='/women')
+          img.img-font(src='imgs/home/women.png')
+        .box
+          .text
+            a(href='/women') PARA MUJERES
+      article#men2
+        a(href='/men')
+          img.img-font(src='imgs/home/men.png')
+        .box
+          .text
+            a(href='/men') PARA HOMBRES
+      article#shoes3
+        a(href='/shoes')
+          img.img-font(src='imgs/home/shoes.png')
+        .box
+          .text
+            a(href='/shoes') ZAPATOS
+      article#age18only
+        a(href='/age18')
+          img.img-font(src='imgs/home/mas18.png')
+        .box
+          .text
+            a(href='/age18') +18
+.footer-dark
+  footer
+    .container
+      .row
+        .col-sm-6.col-md-3.item
+          h3 Categorias
+          ul
+            li
+              a(href='#') Mujer
+            li
+              a(href='#') Hombre
+            li
+              a(href='#') +18
+        .col-sm-6.col-md-3.item
+          h3 ACERCA DE
+          ul
+            li
+              a(href='#') Compa&ntilde;ia
+            li
+              a(href='#') Equipo
+            li
+        .col-md-6.item.text
+          h3 Z.F.S BOUTIQUE
+          p
+            | Nos enfocamos en el estilo propio de las personas, ayudandoles a
+            | decidir c&oacute;mo quieren verse.
+        .col.item.social
+          a(href='#')
+            i.icon.ion-social-facebook
+          a(href='#')
+            i.icon.ion-social-twitter
+          a(href='#')
+            i.icon.ion-social-youtube
+          a(href='#')
+            i.icon.ion-social-instagram
+      p.copyright Z.F.S BOUTIQUE &copy; 2019
+script(src='assets/js/jquery.min.js')
+script(src='assets/bootstrap/js/bootstrap.min.js')
+script(src='assets/js/bs-init.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js')
+script(src='assets/js/Simple-Slider.js')
