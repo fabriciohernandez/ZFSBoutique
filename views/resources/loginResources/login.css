@@ -14,11 +14,16 @@ html, body {
   background: #f3f2f2;
 }
 
+
+
 h4 {
   font-size: 24px;
   font-weight: 600;
   color: #000;
   opacity: .85;
+}
+h5 {
+  color: tomato;
 }
 
 label {
@@ -64,7 +69,7 @@ a.discrete {
   margin-left: auto;
   font-weight: 300;
   transition: all .3s ease;
-  margin-top: 40px;
+  margin-top: 5px;
 }
 a.discrete:hover {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
@@ -253,4 +258,11 @@ input:focus {
   height: 40px;
   width: auto;
   margin: 20px;
+}
+
+.linksSuaves{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
 }
