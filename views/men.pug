@@ -1,85 +1,111 @@
 doctype html
 head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  link(rel='stylesheet' href='css/style.css')
-  link(href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet')
-  script(src='https://kit.fontawesome.com/f0e7b31299.js' crossorigin='anonymous')
-  style
-    include resources/shopResources/style.css
-  title Men
-section.main-container
-  header.header
-    .account
-      ul
-        li
-          button
-            a(href='/login') Iniciar Sesi&oacute;n
-      a.hide-mobile
-        i.fas.fa-shopping-bag
-    a(href='/home')
-      img.logo(src='imgs/shop/Logo.png')
-  .account-mobile
-    ul.mobile-menu.list(id='#menu')
-      li
-        a(href='/login') INICIAR SESI&Oacute;N
-      li
-        a SHOPPING CART
-  .nav-container
-    nav
-      ul.menu
-        li
-          a#l1(href='/all') ALL
-        li
-          a#l2(href='/women') WOMEN
-        li
-          a#l3(href='/shoes') SHOES
-        li
-          a#l4(href='/age18') +18
-  .banner
-    img(src='imgs/shop/men01.png')
-  section.clothing
-    .shop-container
-      .filter-bar
-        ul
-          li Pantalones
-          li Camisas
-          li Zapatos
-      .show-clothes
-        ul
-          li
-            img.item(src='imgs/shop/clothing/Men/jacket01.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/pants01.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/pants02.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/pants03.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/pants04.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/pants05.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/sweater01.jpg')
-          li
-            img.item(src='imgs/shop/clothing/Men/sweater02.jpg')
-  section.info
-    .bottom-container
-      .info-text
-        img(src='/imgs/shop/info.svg')
-        p
-          | &iquest;Necesitas ayuda o informaci&oacute;n?
-      .options
-        ul
-          li
-            a(href='#') Ayuda
-          li
-            a(href='#') Informaci&oacute;n
-footer
-  p Copyright 2019 ZFS Boutique. All Rights Reserved
-script(type='text/javascript' src='/js/main.js')
-script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
-script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+  title Hombre
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,600')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css')
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css')
+  link(rel='stylesheet' href='assets/fonts/ionicons.min.css')
+  link(rel='stylesheet' href='assets/css/Footer-Dark.css')
+  link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='assets/css/Navigation-with-Button.css')
+  link(rel='stylesheet' href='assets/css/Simple-Slider.css')
+  link(rel='stylesheet' href='assets/css/styles.css')
+  link(rel='stylesheet' href='assets/css/styleCards.css')
 
+  
+  
+nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
+  .container
+    a.navbar-brand(href='/home') Z.F.S Boutique
+    button.navbar-toggler(data-toggle='collapse' data-target='#navcol-1')
+      span.sr-only Toggle navigation
+      span.navbar-toggler-icon
+    #navcol-1.collapse.navbar-collapse
+      ul.nav.navbar-nav.mr-auto
+        li.nav-item(role='presentation')
+          a.nav-link(href='/home') Inicio
+        li.nav-item(role='presentation')
+          a.nav-link.active(href='#') Cont&aacute;cto
+        li.nav-item.dropdown
+          a.dropdown-toggle.nav-link(data-toggle='dropdown' aria-expanded='false' href='#') Categorias
+          .dropdown-menu(role='menu')
+            a.dropdown-item(role='presentation' href='/all') Todo
+            a.dropdown-item(role='presentation' href='/women') Mujer
+            a.dropdown-item.active(role='presentation' href='/men') Hombre
+            a.dropdown-item(role='presentation' href='/shoes') Zapatos
+            a.dropdown-item(role='presentation' href='/age18') +18
+      span.navbar-text.actions
+        a.login(href='/login/salir') Cerrar Sesion
+        
+.homeParllax(data-bs-parallax-bg='true' style='height: 500px;background-image: url("https://images.unsplash.com/photo-1473269486199-2d4465ea0419?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");background-position: center;background-size: cover;filter: blur(0px) contrast(100%);')
+  h1(data-aos='fade-up' data-aos-duration='2500' data-aos-delay='50' style='color: black; font-size: 100px')
+    | HOMBRE
+
+.container.page-wrapper
+  .page-inner
+    .row
+      .el-wrapper
+        .box-up
+          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
+          .img-info
+            .info-inner
+              span.p-name I feel like Pablo
+              span.p-company Yeezy
+            .a-size
+              | Available sizes : 
+              span.size S , M , L , XL
+        .box-down
+          .h-bg
+            .h-bg-inner
+          a.cart(href='#')
+            span.price $120
+            span.add-to-cart
+              span.txt Add in cart
+
+.footer-dark
+  footer
+    .container
+      .row
+        .col-sm-6.col-md-3.item
+          h3 Categorias
+          ul
+            li
+              a(href='/women') Mujer
+            li
+              a(href='/men') Hombre
+            li
+              a(href='/age18') +18
+        .col-sm-6.col-md-3.item
+          h3 ACERCA DE
+          ul
+            li
+              a(href='#') Compa&ntilde;ia
+            li
+              a(href='#') Equipo
+            li
+        .col-md-6.item.text
+          h3 Z.F.S BOUTIQUE
+          p
+            | Nos enfocamos en el estilo propio de las personas, ayudandoles a
+            | decidir c&oacute;mo quieren verse.
+        .col.item.social
+          a(href='#')
+            i.icon.ion-social-facebook
+          a(href='#')
+            i.icon.ion-social-twitter
+          a(href='#')
+            i.icon.ion-social-youtube
+          a(href='#')
+            i.icon.ion-social-instagram
+      p.copyright Z.F.S BOUTIQUE &copy; 2019
+script(src='assets/js/jquery.min.js')
+script(src='assets/bootstrap/js/bootstrap.min.js')
+script(src='assets/js/bs-init.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js')
+script(src='assets/js/Simple-Slider.js')

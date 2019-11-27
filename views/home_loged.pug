@@ -14,23 +14,24 @@ head
   link(rel='stylesheet' href='assets/css/styles.css')
 nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
   .container
-    a.navbar-brand(href='#') Z.F.S Boutique
+    a.navbar-brand(href='/home') Z.F.S Boutique
     button.navbar-toggler(data-toggle='collapse' data-target='#navcol-1')
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
     #navcol-1.collapse.navbar-collapse
       ul.nav.navbar-nav.mr-auto
         li.nav-item(role='presentation')
-          a.nav-link.active(href='#') Inicio
+          a.nav-link.active(href='/home') Inicio
         li.nav-item(role='presentation')
-          a.nav-link(href='#') Cont&aacute;cto
+          a.nav-link.active(href='#') Cont&aacute;cto
         li.nav-item.dropdown
           a.dropdown-toggle.nav-link(data-toggle='dropdown' aria-expanded='false' href='#') Categorias
           .dropdown-menu(role='menu')
-            a.dropdown-item(role='presentation' href='#') Todo
-            a.dropdown-item(role='presentation' href='#') Mujer
-            a.dropdown-item(role='presentation' href='#') Hombre
-            a.dropdown-item(role='presentation' href='#') +18
+            a.dropdown-item(role='presentation' href='/all') Todo
+            a.dropdown-item(role='presentation' href='/women') Mujer
+            a.dropdown-item(role='presentation' href='/men') Hombre
+            a.dropdown-item(role='presentation' href='/shoes') Zapatos
+            a.dropdown-item(role='presentation' href='/age18') +18
       span.navbar-text.actions
         a.login(href='/login/salir') Cerrar Sesion
         
@@ -80,11 +81,11 @@ section#shop.main-container
           h3 Categorias
           ul
             li
-              a(href='#') Mujer
+              a(href='/women') Mujer
             li
-              a(href='#') Hombre
+              a(href='/man') Hombre
             li
-              a(href='#') +18
+              a(href='/age18') +18
         .col-sm-6.col-md-3.item
           h3 ACERCA DE
           ul

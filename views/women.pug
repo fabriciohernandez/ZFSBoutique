@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-  title Home
+  title Mujer
   link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Nunito+Sans:400,600')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css')
@@ -21,23 +21,24 @@ head
   
 nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
   .container
-    a.navbar-brand(href='#') Z.F.S Boutique
+    a.navbar-brand(href='/home') Z.F.S Boutique
     button.navbar-toggler(data-toggle='collapse' data-target='#navcol-1')
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
     #navcol-1.collapse.navbar-collapse
       ul.nav.navbar-nav.mr-auto
         li.nav-item(role='presentation')
-          a.nav-link(href='#') Inicio
+          a.nav-link(href='/home') Inicio
         li.nav-item(role='presentation')
-          a.nav-link(href='#') Cont&aacute;cto
+          a.nav-link.active(href='#') Cont&aacute;cto
         li.nav-item.dropdown
           a.dropdown-toggle.nav-link(data-toggle='dropdown' aria-expanded='false' href='#') Categorias
           .dropdown-menu(role='menu')
-            a.dropdown-item(role='presentation' href='#') Todo
-            a.dropdown-item.active(role='presentation' href='#') Mujer
-            a.dropdown-item(role='presentation' href='#') Hombre
-            a.dropdown-item(role='presentation' href='#') +18
+            a.dropdown-item(role='presentation' href='/all') Todo
+            a.dropdown-item.active(role='presentation' href='/women') Mujer
+            a.dropdown-item(role='presentation' href='/men') Hombre
+            a.dropdown-item(role='presentation' href='/shoes') Zapatos
+            a.dropdown-item(role='presentation' href='/age18') +18
       span.navbar-text.actions
         a.login(href='/login/salir') Cerrar Sesion
         
@@ -65,148 +66,6 @@ nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
             span.price $120
             span.add-to-cart
               span.txt Add in cart
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
-    .row
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
-    .row
-      .el-wrapper
-        .box-up
-          img.img(src='https://images.unsplash.com/photo-1571827995797-5af346e817b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80' alt='')
-          .img-info
-            .info-inner
-              span.p-name Feel it
-              span.p-company Yeezy
-            .a-size
-              | Tallas Disponibles : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $50
-            span.add-to-cart
-              span.txt Añadir al carrito
-      .el-wrapper
-        .box-up
-          img.img(src='https://images.unsplash.com/photo-1519722417352-7d6959729417?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80' alt='')
-          .img-info
-            .info-inner
-              span.p-name Dragon
-              span.p-company Yeezy
-            .a-size
-              | Tallas Disponibles : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $25
-            span.add-to-cart
-              span.txt Añadir al carrito
-      .el-wrapper
-        .box-up
-          img.img(src='https://images.unsplash.com/photo-1521043330514-61d46d71684c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80' alt='')
-          .img-info
-            .info-inner
-              span.p-name Happy T-Shirt
-              span.p-company Yeezy
-            .a-size
-              | Tallas Disponibles : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $15
-            span.add-to-cart
-              span.txt Añadir al carrito
-
-
-   
-  
 
 .footer-dark
   footer
@@ -216,11 +75,11 @@ nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
           h3 Categorias
           ul
             li
-              a(href='#') Mujer
+              a(href='/women') Mujer
             li
-              a(href='#') Hombre
+              a(href='/men') Hombre
             li
-              a(href='#') +18
+              a(href='/age18') +18
         .col-sm-6.col-md-3.item
           h3 ACERCA DE
           ul
