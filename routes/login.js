@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 
 router.post("/iniciar", (req,res,next)=>{
   passport.authenticate('local',{
-    successRedirect: '/age18',
+    successRedirect: '/home',
     failureRedirect: '/login',
     failureFlash: true
   })(req,res,next)
