@@ -122,10 +122,27 @@ module.exports.getShoes = async (req, res) => {
 module.exports.getAge18 = async (req, res) => {
   try {
     const productos = await Producto.find({tipo: '+18'})
-    //res.json(canales)
     var cant = productos.length
 
     res.render('age18',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
+
+module.exports.getCarrito = async (req, res) => {
+  try {
+    let carrito=[]
+    let subtotal = 0
+    for (var x = 0; x < req.user.Carro.length; x++){
+      productos = await Producto.findOne({_id: req.user.Carro[x]})
+      subtotal = subtotal + parseFloat(productos.precio)
+      carrito.push(productos)
+    }
+
+
+    res.render('checkout', {arreglo: carrito, cant: carrito.length, total: subtotal})
   }
   catch (err){
     res.status(500).json({message: err.message})

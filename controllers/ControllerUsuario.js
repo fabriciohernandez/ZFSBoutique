@@ -1,18 +1,16 @@
-var Mongoose = require("mongoose");
 const Usuario = require("../models/Usuario");
-
 
 //triggers??????
 
 //INSERT
-const insert = async (req, res) => {
+module.exports.insert = async (req, res) => {
   try {
     const { User_name, Correo, Password, RPassword } = req.body;
     let usuario = new Usuario(req.body);
 
     //verificar las contrasenas
     if (Password !== RPassword) {
-      res.render("register", { error1: 'Las contrasenas no coinciden.' });
+      res.render("register", { error1: "Las contrasenas no coinciden." });
     } else {
       await usuario.save();
       const token = await usuario.generateAuthToken();
@@ -27,18 +25,17 @@ const insert = async (req, res) => {
   }
 };
 
-const login = async (req, res) => {
+module.exports.login = async (req, res) => {
   try {
     const { Correo, Password } = req.body;
     const user = await Usuario.findByCredentials(Correo, Password);
 
     if (!user) {
-      req.flash('error_msg','Credenciales incorrectas')
+      req.flash("error_msg", "Credenciales incorrectas");
       return res.redirect("/login");
     }
 
     const token = await user.generateAuthToken();
-
   } catch (error) {
     console.log(error);
     res.redirect(301, "/login");
@@ -47,7 +44,7 @@ const login = async (req, res) => {
   }
 };
 //UPDATE
-const update = (req, res) => {
+module.exports.update = (req, res) => {
   let usuario = req.body;
 
   if (!usuario._id) {
@@ -70,7 +67,7 @@ const update = (req, res) => {
 };
 
 //DELETE BY ID
-const deleteById = (req, res) => {
+module.exports.deleteById = (req, res) => {
   let usuario = req.body;
 
   if (!usuario._id) {
@@ -93,7 +90,7 @@ const deleteById = (req, res) => {
 };
 
 //GET ALL
-const getAll = (req, res) => {
+module.exports.getAll = (req, res) => {
   Usuario.find((err, usuarios) => {
     if (err)
       return res.status(500).json({
@@ -111,7 +108,7 @@ const getAll = (req, res) => {
 };
 
 //GET BY ID
-const getOneById = (req, res) => {
+module.exports.getOneById = (req, res) => {
   let id = req.params.id;
 
   Usuario.findById(id, (err, usuario) => {
@@ -130,11 +127,32 @@ const getOneById = (req, res) => {
   });
 };
 
-module.exports = {
-  insert,
-  login,
-  update,
-  deleteById,
-  getAll,
-  getOneById
+module.exports.addItem = (req, res) => {
+  try {
+    var idProducto = req.params.idProducto;
+    req.user.Carro.push(idProducto)
+    let usuario = req.user
+
+    if (!usuario._id) {
+      return res.status(400).json({
+        message: "Something happend try again"
+      });
+    }
+
+    Usuario.updateOne({ _id: usuario._id }, usuario)
+      .then(value => {
+        req.flash("success_msg", "Producto añadido al carrito");
+        return res.redirect("/checkout");
+      })
+      .catch(err => {
+        return res.redirect("/home");
+      });
+    
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({
+      message: `There is no one with product ${idProducto}`
+    });
+  }
+  
 };

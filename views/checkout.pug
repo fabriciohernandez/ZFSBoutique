@@ -1,0 +1,35 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Checkout
+  link(rel='stylesheet' href='assets/css/styleCheckout.css')
+// partial:index.partial.html
+.container
+  .card
+    form(action="/checkout" method='post')
+      button.proceed(type='submit')
+        svg.sendicon(width='24' height='24' viewbox='0 0 24 24')
+          path(d='M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z')
+      img.logo-card(src='https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png')
+      label Card number:
+      input#user.input.cardnumber(type='text' name='N_tarjeta' placeholder='1234 5678 9101 1121' required)
+      label Name:
+      input.input.name(type='text' name='Nombre' placeholder='Fabricio Hernández' required)
+      label.toleft CCV:
+      input.input.toleft.ccv(placeholder='321' required)
+  .receipt
+    .col
+      p Total:
+      h2.cost $ #{{total}.total}
+      br
+      p Tienda:
+      h2.seller Z.F.S Boutique
+    .col
+      p Bought Items:
+      - for (var x = 0; x < {cant}.cant; x++)     
+        h3.bought-items #{{arreglo}.arreglo[x].titulo}
+        p.bought-items.description #{{arreglo}.arreglo[x].tipo}
+        p.bought-items.price $ #{{arreglo}.arreglo[x].precio}
+        br
+    p.comprobe Gracias por preferirnos.
+// partial

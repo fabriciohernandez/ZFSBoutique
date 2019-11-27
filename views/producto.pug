@@ -1,7 +1,7 @@
 doctype html
 head
   meta(charset='UTF-8')
-  title Step By Step Form
+  title Nuevo Producto
   link(href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
   link(rel='stylesheet' href='assets/css/productoCss.css')
@@ -32,9 +32,9 @@ head
         br
         br
         input(type='text' name='tipo' placeholder='Tipo (Mujer, Hombre, Zapatos o +18)' required)
-        input(type='text' name='size' placeholder='Talla (si aplica)')
-        input(type='text' name='marca' placeholder='Marca')
-        input(type='text' name='titulo' placeholder='Titulo')
+        input(type='text' name='size' placeholder='Talla (si aplica)') 
+        input(type='text' name='marca' placeholder='Marca' required)
+        input(type='text' name='titulo' placeholder='Titulo' required)
         input(type='file' accept=".jpg,.png,.jpeg" name="image" required)
         br
         br

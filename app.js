@@ -13,6 +13,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 var loginRouter = require("./routes/login");
+var UserRouter = require("./routes/usuario");
 var registerRouter = require("./routes/register");
 var productoRouter = require("./routes/producto");
 var notFoundRouter = require("./routes/404");
@@ -21,6 +22,7 @@ var womenRouter = require("./routes/women");
 var menRouter = require("./routes/men");
 var shoesRouter = require("./routes/shoes");
 var ageRestrictedRouter = require("./routes/age18");
+var checkOutRouter = require("./routes/checkout");
 
 var homeLogedRouter = require("./routes/homeLoged");
 
@@ -100,7 +102,8 @@ app.use("/women", womenRouter);
 app.use("/men", menRouter);
 app.use("/shoes", shoesRouter);
 app.use("/age18", ageRestrictedRouter);
-
+app.use("/usuario", UserRouter);
+app.use("/checkout", checkOutRouter);
 //ROUTES LOGED
 app.use("/home", homeLogedRouter);
 

@@ -8,7 +8,6 @@ const UsuarioSchema = Mongoose.Schema({
     type: String,
     trim: true
   },
-  Apellido: String,
   Nombre: String,
 
   Password: {
@@ -24,8 +23,7 @@ const UsuarioSchema = Mongoose.Schema({
       }
     }
   ],
-  Password: String,
-  eded: String,
+  edad: String,
 
   Rol: {
     type: String,
@@ -46,13 +44,7 @@ const UsuarioSchema = Mongoose.Schema({
   },
   Correo: Array,
   N_tarjeta: Array,
-  Carro: {
-    Producto: {
-      type: Mongoose.Schema.ObjectId,
-      ref: "Producto"
-    },
-    total: String
-  }
+  Carro: Array
 });
 
 //Definiendo las pre saves functions
