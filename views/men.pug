@@ -41,31 +41,36 @@ nav.navbar.navbar-light.navbar-expand-md.navigation-clean-button
             a.dropdown-item(role='presentation' href='/age18') +18
       span.navbar-text.actions
         a.login(href='/login/salir') Cerrar Sesion
+        a.login(href='/producto') Crear Producto
+        a.login(href='#') Ver Carrito
         
 .homeParllax(data-bs-parallax-bg='true' style='height: 500px;background-image: url("https://images.unsplash.com/photo-1473269486199-2d4465ea0419?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");background-position: center;background-size: cover;filter: blur(0px) contrast(100%);')
   h1(data-aos='fade-up' data-aos-duration='2500' data-aos-delay='50' style='color: black; font-size: 100px')
     | HOMBRE
-
+    
 .container.page-wrapper
   .page-inner
     .row
-      .el-wrapper
-        .box-up
-          img.img(src='http://code.slicecrowd.com/labs/4/images/t-shirt.png' alt='')
-          .img-info
-            .info-inner
-              span.p-name I feel like Pablo
-              span.p-company Yeezy
-            .a-size
-              | Available sizes : 
-              span.size S , M , L , XL
-        .box-down
-          .h-bg
-            .h-bg-inner
-          a.cart(href='#')
-            span.price $120
-            span.add-to-cart
-              span.txt Add in cart
+      - for (var x = 0; x < {cant}.cant; x++)
+        .el-wrapper
+          .box-up
+            - var imageUrl = {arreglo}.arreglo[x].imageUrl
+            img.img(src = imageUrl  alt='Image' width='200px')
+            .img-info
+              .info-inner
+                span.p-name #{{arreglo}.arreglo[x].titulo}
+                span.p-company #{{arreglo}.arreglo[x].marca}
+                span.p-company #{{arreglo}.arreglo[x].tipo}
+              .a-size
+                | Tallas Disponibles: 
+                span.size #{{arreglo}.arreglo[x].size}
+          .box-down
+            .h-bg
+              .h-bg-inner
+            a.cart(href='#')
+              span.price $ #{{arreglo}.arreglo[x].precio}
+              span.add-to-cart
+                span.txt Añadir al carrito
 
 .footer-dark
   footer

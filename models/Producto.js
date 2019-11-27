@@ -1,17 +1,14 @@
-const Mongoose= require ("mongoose");
-const Imagen = require("../models/Imagenes")
+const Mongoose = require("mongoose");
 
 const ProductoSchema = new Mongoose.Schema({
-    Codigo: {type: String, unique: true},
-    tipo:String,
-    Status:Boolean,
-    Size:String,
-    Precio: String,
-    Marca:String,
-    Imagen:{
-        imagen: { type: Mongoose.Schema.ObjectId, ref: Imagen }
-    }
-    
+  tipo: String,
+  size: String,
+  precio: String,
+  marca: String,
+  titulo: String,
+  status: Boolean,
+  imageUrl: String,
+  public_id: String
 });
 
 module.exports = Mongoose.model("Producto", ProductoSchema);

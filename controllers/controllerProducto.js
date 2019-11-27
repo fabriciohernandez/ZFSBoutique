@@ -1,47 +1,52 @@
 var mongoose = require("mongoose");
 var Producto = require("../models/Producto");
+var cloudinary = require("cloudinary");
 
-//triggers??????
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+var fs = require("fs-extra");
 
 //INSERT
-const insert = (req, res) => {
-  let body = req.body;
-  console.log(body);
-
-  let producto = new Producto(req.body);
-
-  producto.save("/add2", (err, nProducto) => {
-    if (err) return res.render("404", { title: "404" });
-
-    return res.render({ message: "producto añadido!" });
-  });
-};
-
-//UPDATE
-const update = (req, res) => {
-  let producto = req.body;
-
-  if (!producto._id) {
-    return res.status(400).json({
-      message: "Something happend try again"
+module.exports.insert = (req, res) => {
+  console.log(req.body);
+  console.log(req.file);
+  var { tipo, size, precio, marca, titulo, status } = req.body;
+  var saveImageDb = (error, result) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).send("Error");
+    }
+    var newProducto = new Producto({
+      tipo: tipo.toUpperCase(),
+      size: size,
+      precio: precio,
+      marca: marca,
+      titulo: titulo,
+      status: status,
+      imageUrl: result.url,
+      public_id: result.public_id
     });
-  }
 
-  Producto.update({ _id: producto._id }, producto)
-    .then(value => {
-      res.status(200).json({
-        message: "Update was successful"
+    newProducto
+      .save()
+      .then(producto => {
+        fs.unlink(req.file.path);
+        req.flash('success_msg','Su producto se añadió correctamente, puedes verificar en la sección de TODO');
+        res.redirect('/producto')
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(500).send(err.message);
       });
-    })
-    .catch(err => {
-      res.status(500).json({
-        message: "Something happend trying to update "
-      });
-    });
+  };
+  cloudinary.v2.uploader.upload(req.file.path, saveImageDb);
 };
 
 //DELETE BY ID
-const deleteById = (req, res) => {
+module.exports.deleteById = (req, res) => {
   let producto = req.body;
 
   if (!producto._id) {
@@ -64,47 +69,65 @@ const deleteById = (req, res) => {
 };
 
 //GET ALL
-const getAll = (req, res) => {
-  Producto.find((err, productos) => {
-    if (err)
-      return res.status(500).json({
-        message: "Something happend trying to get the products"
-      });
+module.exports.getAll = async (req, res) => {
+  try {
+    const productos = await Producto.find()
+    //res.json(canales)
+    var cant = productos.length
 
-    if (productos) {
-      res.status(200).json(productos);
-    } else {
-      res.status(404).json({
-        message: "There isn't any product"
-      });
-    }
-  });
-};
+    res.render('all',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
 
-//GET BY ID
-const getOneById = (req, res) => {
-  let id = req.params.id;
+module.exports.getWomen = async (req, res) => {
+  try {
+    const productos = await Producto.find({tipo: 'MUJER'})
+    //res.json(canales)
+    var cant = productos.length
 
-  Producto.findById(id, (err, producto) => {
-    if (err)
-      return res.status(500).json({
-        message: "Something happend try again"
-      });
+    res.render('women',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
 
-    if (producto) {
-      res.status(200).json(producto);
-    } else {
-      res.status(404).json({
-        message: `There is not a prudoct with code ${id}`
-      });
-    }
-  });
-};
+module.exports.getMen = async (req, res) => {
+  try {
+    const productos = await Producto.find({tipo: 'HOMBRE'})
+    //res.json(canales)
+    var cant = productos.length
 
-module.exports = {
-  insert,
-  update,
-  deleteById,
-  getAll,
-  getOneById
-};
+    res.render('men',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
+module.exports.getShoes = async (req, res) => {
+  try {
+    const productos = await Producto.find({tipo: 'ZAPATOS'})
+    //res.json(canales)
+    var cant = productos.length
+
+    res.render('shoes',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
+module.exports.getAge18 = async (req, res) => {
+  try {
+    const productos = await Producto.find({tipo: '+18'})
+    //res.json(canales)
+    var cant = productos.length
+
+    res.render('age18',{arreglo:productos, cant:cant})
+  }
+  catch (err){
+    res.status(500).json({message: err.message})
+  }
+}
