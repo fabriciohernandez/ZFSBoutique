@@ -15,7 +15,6 @@ if (process.env.NODE_ENV !== "production") {
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
 var productoRouter = require("./routes/producto");
-var imagenesRouter = require("./routes/imagenes");
 var notFoundRouter = require("./routes/404");
 var allRouter = require("./routes/all");
 var womenRouter = require("./routes/women");
@@ -95,7 +94,6 @@ app.use((req, res, next) =>{
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/producto", productoRouter);
-app.use("/imagenes", imagenesRouter);
 app.use("/404", notFoundRouter);
 app.use("/all", allRouter);
 app.use("/women", womenRouter);
