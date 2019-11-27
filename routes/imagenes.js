@@ -12,7 +12,7 @@ var fs = require("fs-extra");
 
 //Esto nos puede servir si queremos listar la imagenes subidas nos servira
 //para eliminar o ver todas la fotos
-router.get("/", async (req, res) => {
+router.get("/all", async (req, res) => {
   var photo = await Imagen.find();
   console.log(photo);
   res.render("images", {
