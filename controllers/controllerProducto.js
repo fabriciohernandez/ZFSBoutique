@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 var Producto = require("../models/Producto");
 var cloudinary = require("cloudinary");
+const Usuario = require("../models/Usuario");
+
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -147,4 +149,34 @@ module.exports.getCarrito = async (req, res) => {
   catch (err){
     res.status(500).json({message: err.message})
   }
+}
+
+module.exports.pagar = async (req, res) => {
+  try {
+    req.user.Carro = []
+    let usuario = req.user
+    console.log(req.user)
+    if (!usuario._id) {
+      return res.status(400).json({
+        message: "Something happend try again"
+      });
+    }
+
+    Usuario.updateOne({ _id: usuario._id }, usuario)
+      .then(value => {
+        req.flash("success_msg", "Orden pagada");
+        return res.render('ordenLista')
+      })
+      .catch(err => {
+        return res.redirect("/home");
+      });
+    
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({
+      message: `There is no one with product`
+    });
+  }
+
+
 }

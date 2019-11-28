@@ -5,7 +5,5 @@ var controllerProducto = require("../controllers/controllerProducto")
 
 router.get("/", ensureAuthenticated ,controllerProducto.getCarrito);
 
-router.post("/", ensureAuthenticated ,(req, res) => {
-    res.send(req.body);
-  });
+router.post("/", ensureAuthenticated , controllerProducto.pagar);
 module.exports = router;
