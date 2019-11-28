@@ -48,7 +48,7 @@ app.set("views", "./views");
 app.set("view engine", "pug");
 
 //starting the server
-app.set("port", process.env.PORT || 3050);
+app.set("port", process.env.PORT );
 
 app.listen(app.get("port"), () => {
   console.log(`server on port ${app.set("port")}`);
