@@ -42,7 +42,6 @@ const UsuarioSchema = Mongoose.Schema({
       }
     }
   },
-  Correo: Array,
   N_tarjeta: Array,
   Carro: Array
 });

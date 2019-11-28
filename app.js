@@ -23,6 +23,7 @@ var menRouter = require("./routes/men");
 var shoesRouter = require("./routes/shoes");
 var ageRestrictedRouter = require("./routes/age18");
 var checkOutRouter = require("./routes/checkout");
+var APIRouter = require("./routes/API");
 
 var homeLogedRouter = require("./routes/homeLoged");
 
@@ -104,6 +105,7 @@ app.use("/shoes", shoesRouter);
 app.use("/age18", ageRestrictedRouter);
 app.use("/usuario", UserRouter);
 app.use("/checkout", checkOutRouter);
+app.use("/API", APIRouter)
 //ROUTES LOGED
 app.use("/home", homeLogedRouter);
 
