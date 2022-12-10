@@ -16,7 +16,7 @@
     "cross-env": "^6.0.3",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "express-flash-message": "^1.0.5",
     "express-session": "^1.17.0",
     "flash": "^1.1.0",
